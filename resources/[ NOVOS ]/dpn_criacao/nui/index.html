@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Orbitron'>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">		
+    <link href="dpn.css" rel="stylesheet" type="text/css"/>
+    
+</head>
+<body>
+    <div id="actionMenu">
+        <div class="background-black" style="display: none;">
+            <div class="entrada">
+                <div class="entrada-notransform">
+                    <div class="logo-entrada"></div>
+                    <div class="title-entrada">Seja bem-vindo(a),</div>
+                    <div class="inputs">
+                        <input type="text" id="nome" class="identidade" placeholder="Nome">
+                        <input type="text" id="sobrenome" class="identidade" placeholder="Sobrenome">
+                        <div class="user-img"></div>
+                        <input type="number" id="idade" placeholder="Idade">
+                        <div class="text-idade">Anos <span>21-80</div>
+                        <div class="generos">
+                            <div id="genero-input" class="dad">
+                                <div class="selecao-dad">
+                                    <div class="selecionado-dad"></div>
+                                </div>
+                            </div>
+                            <div id="genero-input" class="mom">
+                                <div class="selecao-mom">
+                                    <div class="selecionado-mom"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="seta-passar">
+                           <img src="imagem/right-arrow.png">           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="preto-back"   style="display: none;">
+            <div class="clickPreset">Mais<br>Frequentes<br><img src="imagem/setinha.png">
+            </div>
+            <div id="caixa-preset">
+               
+            </div>
+
+            <div class="todas-as-informacoes">
+                <div class="caixa-com-asalteracoes">
+                    <div class="alteracoes-sem-transform">
+                        <div class="title">Bem-vindo(a) à Criação</div>
+                        <div class="box-com-caracteristicas">
+                        <div class="inicio-criacao">
+                            <div id="texto-inicial" class="primeira-ajuda">Navegue pela barra lateral<br>para modificar o(a) personagem<img style="position:relative;bottom: 1vw; left: 2vw;" src="imagem/seta.png"></div>
+                            <div id="texto-inicial" class="segunda-ajuda"><img style="transform: rotate(180deg); position: relative; top: 1.1vw; right: 2vw;" src="imagem/seta.png">Se preferir, selecione um modelo<br>pré-definido mais frequente</div>
+                            <div id="texto-inicial" class="terceira-ajuda" style="height: 0vw;">Satisfeito com o(a) personagem?<br>Clique abaixo e<br>escolha suas roupas<br> <img style="transform: rotate(90deg);" src="imagem/seta.png"></div>
+                        </div>
+
+
+                            <div class="geral" style="display: none;"><!--Inicio geral-->
+                                <div id="parentswindow">
+                                    <img id="parentsdad" src="">
+                                    <img id="parentsmom" src="">
+                                    <div class="parenteName"><span>Mãe</span></div>
+                                    <div class="parenteName"><span>Pai</span></div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Sua mãe:</h3>
+                                    <div class="controls">
+                                        <div class="arrow left" style="transform: rotate(180deg);"></div>
+                                        <select class="headblend" id="mom">
+                                            <option value="21" data-portrait="female_0" selected="selected">Hannah</option>
+                                            <option value="22" data-portrait="female_1">Audrey</option>
+                                            <option value="23" data-portrait="female_2">Jasmine</option>
+                                            <option value="24" data-portrait="female_3">Gisele</option>
+                                            <option value="25" data-portrait="female_4">Amelia</option>
+                                            <option value="26" data-portrait="female_5">Isabella</option>
+                                            <option value="27" data-portrait="female_6">Zoe</option>
+                                            <option value="28" data-portrait="female_7">Ava</option>
+                                            <option value="29" data-portrait="female_8">Camila</option>
+                                            <option value="30" data-portrait="female_9">Violet</option>
+                                            <option value="31" data-portrait="female_10">Sophia</option>
+                                            <option value="32" data-portrait="female_11">Evelyn</option>
+                                            <option value="33" data-portrait="female_12">Nicole</option>
+                                            <option value="34" data-portrait="female_13">Ashley</option>
+                                            <option value="35" data-portrait="female_14">Grace</option>
+                                            <option value="36" data-portrait="female_15">Brianna</option>
+                                            <option value="37" data-portrait="female_16">Natalie</option>
+                                            <option value="38" data-portrait="female_17">Olivia</option>
+                                            <option value="39" data-portrait="female_18">Elizabeth</option>
+                                            <option value="40" data-portrait="female_19">Charlotte</option>
+                                            <option value="41" data-portrait="female_20">Emma</option>
+                                            <option value="45" data-portrait="special_female_0">Misty</option>
+                                        </select>
+                                        <div class="arrow right"></div>
+                                    </div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Seu pai:</h3>
+                                    <div class="controls">
+                                        <div class="arrow left" style="transform: rotate(180deg);"></div>
+                                        <select class="headblend" id="dad" data-type="headblend">
+                                            <option value="0" data-portrait="male_0"  selected="selected">Benjamin</option>
+                                            <option value="1" data-portrait="male_1">Daniel</option>
+                                            <option value="2" data-portrait="male_2">Joshua</option>
+                                            <option value="3" data-portrait="male_3">Noah</option>
+                                            <option value="4" data-portrait="male_4">Andrew</option>
+                                            <option value="5" data-portrait="male_5">Juan</option>
+                                            <option value="6" data-portrait="male_6">Alex</option>
+                                            <option value="7" data-portrait="male_7">Isaac</option>
+                                            <option value="8" data-portrait="male_8">Evan</option>
+                                            <option value="9" data-portrait="male_9">Ethan</option>
+                                            <option value="10" data-portrait="male_10">Vincent</option>
+                                            <option value="11" data-portrait="male_11">Angel</option>
+                                            <option value="12" data-portrait="male_12">Diego</option>
+                                            <option value="13" data-portrait="male_13">Adrian</option>
+                                            <option value="14" data-portrait="male_14">Gabriel</option>
+                                            <option value="15" data-portrait="male_15">Michael</option>
+                                            <option value="16" data-portrait="male_16">Santiago</option>
+                                            <option value="17" data-portrait="male_17">Kevin</option>
+                                            <option value="18" data-portrait="male_18">Louis</option>
+                                            <option value="19" data-portrait="male_19">Samuel</option>
+                                            <option value="20" data-portrait="male_20">Anthony</option>
+                                            <option value="42" data-portrait="special_male_0">Claude</option>
+                                            <option value="43" data-portrait="special_male_1">Niko</option>
+                                            <option value="44" data-portrait="special_male_2">John</option>
+                                        </select>
+                                        <div class="arrow right"></div>
+                                    </div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Genética:</h3>
+                                    <div class="trocarValor diminui genetica" style="transform: rotate(180deg)" ></div>
+                                    <div class="headblend">
+                                        <input type="range" id="genetica" class="input-range"  value="0.5" min="0" max="1.0" step="0.05" onchange="showVal('shapeMix',this.value)" oninput="onRangeChange('shapeMix',this.value)">
+                                        <div class="proximidade"><span style="position: relative; right:2.4vw;">Pai</span></div>
+                                        <div class="proximidade"><span style="position: relative; left:2.6vw;">Mãe</span></div>
+                                    </div>
+                                    <div class="trocarValor aumenta genetica"></div>
+                                </div>
+                                <div class="list" style="left: 4.5vw;">
+                                    <div class="header" >Cor de pele:</div>
+                                    <div id="corInicial" class="corDaPele" style="position: relative;top: 1vw;">
+                                        <div id="corSecundaria" class="corDaPeleEscolhida"></div>
+                                    </div>
+                                    <div class="caixa-decor">
+                                        <div class="box-color" style="bottom: 4vw;">
+                                            <div class="title-box-color">Mais utilizados:</div>
+                                            <div class="color-frequentes"></div>
+                                            <div class="title-box-color">+Cores</div>
+                                            <div class="color-more"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!--Fim do geral-->
+
+                            <div class="olhos" style="display: none; position: relative; left: 1vw;"> <!--Inicio dos olhos-->
+                                <div class="list" style="left: 4.5vw;">
+                                    <h3 class="header" style="position: relative;left: 3.6vw">Cor dos olhos:</h3>
+                                   
+                                    <div id="corInicial" class="corDosOlhos">
+                                        <div id="corSecundaria" class="corDosOlhosEscolhida"></div>
+                                    </div>
+                                    <div class="caixa-decor">
+                                        <div class="box-color">
+                                            <div class="title-box-color">Mais utilizados:</div>
+                                            <div class="color-frequentes"></div>
+                                            <div class="title-box-color">+Cores</div>
+                                            <div class="color-more"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Tipo de sobrancelha:</h3>
+                                    <div class="trocarValor diminui sobrancelha" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="sobrancelha" class="input-range" value="16" min="0" max="33" step="1" onchange="showVal('eyebrowsModel',this.value)" oninput="onRangeChange('eyebrowsModel',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta sobrancelha"></div>
+                                </div>
+                                <div class="list" style="left: 4.5vw;">
+                                    <h3 class="header" style="position: relative;left: 2.5vw">Cor da sobrancelha:</h3>
+                                    <div id="corInicial" class="corDaSombrancelha">
+                                        <div id="corSecundaria" class="corDaSombrancelhaEscolhida"></div>
+                                    </div>
+                                    <div class="caixa-decor">
+                                        <div class="box-color2">
+                                            <div class="title-box-color2">Mais utilizados:</div>
+                                            <div class="color-frequentes2"></div>
+                                            <div class="title-box-color2">+Cores:</div>
+                                            <div class="color-more2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Altura da sobrancelha:</h3>
+                                    <div class="trocarValor diminui formatoSobrancelha" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="formatoSobrancelha" class="input-range"  min="-1.0" max="0.99" step="0.01" value="0" onchange="showVal('eyebrowsHeight',this.value)" oninput="onRangeChange('eyebrowsHeight',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta formatoSobrancelha"></div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Formato da testa:</h3>
+                                    <div class="trocarValor diminui formatoTesta" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="formatoTesta" class="input-range"  min="-1.0" max="0.99" step="0.01" value="0" oninput="onRangeChange('eyebrowsWidth',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta formatoTesta"></div>
+                                </div>
+                            </div> <!--Fim dos olhos-->
+
+                            <div class="nariz" style="display: none; position: relative; left: 1vw;"><!--Inicio do nariz-->
+                                <div class="list">
+                                    <h3 class="header">Largura do nariz:</h3>
+                                    <div class="trocarValor diminui larguraDoNariz" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="larguraDoNariz" class="input-range" min="-1.0" max="0.99" value="0" step="0.01" oninput="onRangeChange('noseWidth',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta larguraDoNariz"></div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Altura do nariz:</h3>
+                                    <div class="trocarValor diminui alturaDoNariz" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="alturaDoNariz" class="input-range" min="-1.0" max="0.99" value="0" step="0.01" oninput="onRangeChange('noseHeight',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta alturaDoNariz"></div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Comprimento do nariz:</h3>
+                                    <div class="trocarValor diminui comprimentoDoNariz" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="comprimentoDoNariz" class="input-range" min="-1.0" max="0.99" value="0" step="0.01" oninput="onRangeChange('noseLength',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta comprimentoDoNariz"></div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Deslocamento da ponte nasal:</h3>
+                                    <div class="trocarValor diminui ponteNasal" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="ponteNasal" class="input-range"  min="-1.0" max="0.99" value="0" step="0.01" oninput="onRangeChange('noseBridge',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta ponteNasal"></div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Ponta do nariz:</h3>
+                                    <div class="trocarValor diminui pontaDoNariz" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="pontaDoNariz" class="input-range"  min="-1.0" max="0.99" value="0" step="0.01" oninput="onRangeChange('noseTip',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta pontaDoNariz"></div>
+                                </div>
+                            </div><!--Fim do nariz-->
+
+                            <div class="queixo" style="display: none; position: relative; left: 1vw;"><!--Inicio do queixo-->
+                                <div class="list">
+                                    <h3 class="header">Comprimento do Queixo:</h3>
+                                    <div class="trocarValor diminui comprimentoDoQueixo" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="comprimentoDoQueixo" class="input-range" min="-1.0" max="0.99" value="0" step="0.01" oninput="onRangeChange('chinLength',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta comprimentoDoQueixo"></div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Largura do Queixo:</h3>
+                                    <div class="trocarValor diminui larguraDoQueixo" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="larguraDoQueixo" class="input-range" min="-1.0" max="0.99" value="0" step="0.01" oninput="onRangeChange('chinWidth',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta larguraDoQueixo"></div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Posição do queixo:</h3>
+                                    <div class="trocarValor diminui posicaoDoQueixo" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="posicaoDoQueixo" class="input-range" min="-1.0" max="0.99" value="0" step="0.01" oninput="onRangeChange('chinPosition',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta posicaoDoQueixo"></div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Formato do queixo:</h3>
+                                    <div class="trocarValor diminui alturaDoQueixo" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="alturaDoQueixo" class="input-range" min="-1.0" max="0.99" value="0" step="0.01" oninput="onRangeChange('chinShape',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta alturaDoQueixo"></div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Largura do lábios:</h3>
+                                    <div class="trocarValor diminui larguraDosLabios" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="larguraDosLabios" class="input-range" min="-1.0" max="0.99" value="0" step="0.01" oninput="onRangeChange('lips',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta larguraDosLabios"></div>
+                                </div>
+                            </div><!--Fim do queixo-->
+                            <div class="bochecha" style="display: none; position: relative; left: 1vw;"><!--Inicio da bochecha-->
+                                <div class="list">
+                                    <h3 class="header">Altura da bochecha:</h3>
+                                    <div class="trocarValor diminui alturaDaBochecha" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="alturaDaBochecha" class="input-range" min="-1.0" max="0.99" value="0" step="0.01" oninput="onRangeChange('cheekboneHeight',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta alturaDaBochecha"></div>
+                                </div>
+                                <div class="list">
+                                        <h3 class="header">Largura da bochecha:</h3>
+                                        <div class="trocarValor diminui larguraDaBochecha" style="transform: rotate(180deg)"></div>
+                                        <div class="headblend">
+                                            <input type="range" id="larguraDaBochecha" class="input-range" min="-1.0" max="0.99" value="0" step="0.01" oninput="onRangeChange('cheekboneWidth',this.value)">
+                                        </div>
+                                    <div class="trocarValor aumenta larguraDaBochecha"></div>
+                                </div>
+                            </div><!--Fim da bochecha-->
+                            <div class="pescoco" style="display: none;position: relative;left: 1vw;"><!--Inicio do pescoco-->
+                                <div class="list">
+                                    <h3 class="header">Largura da mandíbula:</h3>
+                                    <div class="trocarValor diminui larguraMandibula" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="larguraMandibula" class="input-range" min="-1.0" max="0.99" value="0" step="0.01" oninput="onRangeChange('jawWidth',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta larguraMandibula"></div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Altura da mandíbula:</h3>
+                                    <div class="trocarValor diminui alutraDaMandibula" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="alutraDaMandibula" class="input-range" min="-1.0" max="0.99" value="0" step="0.01" oninput="onRangeChange('jawHeight',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta alutraDaMandibula"></div>
+                                </div>
+                                <div class="list">
+                                    <h3 class="header">Largura do pescoço:</h3>
+                                    <div class="trocarValor diminui alturaDoPescoco" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="alturaDoPescoco" class="input-range" min="-1.0" max="0.99" value="0.5" step="0.01" oninput="onRangeChange('neckWidth',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta alturaDoPescoco"></div>
+                                </div>
+                            </div><!--Fim do pescoco-->
+                            <div class="cabelo" style="display: none;position: relative;left: 1vw;"><!--Inicio cabelo-->
+                                <div class="list">
+                                    <div class="box-cabelo">
+                                        <div class="box-color">
+                                            <div class="title-box-color">Mais utilizados:</div>
+                                            <div class="color-frequentes"></div>
+                                            <div class="title-box-color">+Cores</div>
+                                            <div class="color-more"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="colorHair">
+                                    <div class="list" style="left: -0.5vw;">
+                                        <div class="header" style="position: relative; left: 3.8vw;">Cor primária:</div>
+                                       
+                                        <div id="corInicial" class="corDoCabeloPriamria" style="position: relative;top: 1vw;">
+                                            <div id="corSecundaria" class="corDoCabeloEscolhidoPrimaria"></div>
+                                        </div>
+                                        <div class="caixa-decor">
+                                            <div class="box-color" style="bottom: -2vw; right: 0vw;">
+                                                <div class="title-box-color">Mais utilizados:</div>
+                                                <div class="color-frequentes"></div>
+                                                <div class="title-box-color">+Cores</div>
+                                                <div class="color-more"></div>
+                                            </div>
+                                            <div class="confirm-color caraio">Confirmar Cor</div>
+                                        </div>
+                                    </div>
+                                    <div class="list" style="left: 8.5vw; bottom: 6vw;">
+                                        <div class="header" style="position: relative; left: 3.2vw;">Cor secundária:</div>
+                                       
+                                        <div id="corInicial" class="corCabeloSecundaria" style="position: relative;top: 1vw;">
+                                            <div id="corSecundaria" class="corSecundariaCabeloEscolhida"></div>
+                                        </div>
+                                        <div class="caixa-decor">
+                                            <div class="box-color2"  style="bottom: -2vw; right: 0vw;">
+                                                <div class="title-box-color2">Mais utilizados:</div>
+                                                <div class="color-frequentes2"></div>
+                                                <div class="title-box-color2">+Cores</div>
+                                                <div class="color-more2"></div>
+                                            </div>
+                                            <div class="confirm-color2 caraio">Confirmar Cor</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div><!--Fim cabelo-->
+                            <div class="bigode" style="display: none;position: relative; left: 1vw;"> <!--Inicio do bigode-->
+                                <div class="list">
+                                    <h3 class="header">Tipo do bigode:</h3>
+                                    <div class="trocarValor diminui bigodeTipo" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="bigodeTipo" class="input-range" min="-1" max="28" value="14" step="1" oninput="onRangeChange('beardModel',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta bigodeTipo"></div>
+                                </div>
+                                <div class="list" style="left: 4.5vw;">
+                                    <div class="header" style="position: relative; left: 3.4vw;">Cor do bigode:</div>
+                                    
+                                    <div id="corInicial" class="corDoBigode" style="position: relative;top: 1vw;">
+                                        <div id="corSecundaria" class="corDoBigodeEscolhido"></div>
+                                    </div>
+                                    <div class="caixa-decor">
+                                        <div class="box-color" style="bottom: 4.3vw;">
+                                            <div class="title-box-color">Mais utilizados:</div>
+                                            <div class="color-frequentes"></div>
+                                            <div class="title-box-color">+Cores</div>
+                                            <div class="color-more"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!--Fim do bigode-->
+                            <div class="maquiagem" style="display: none; position: relative; left: 1vw;"> <!--Inicio da maquiagem-->
+                                <div class="list">
+                                    <h3 class="header">Batom:</h3>
+                                    <div class="trocarValor diminui Batom" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="Batom" class="input-range"  min="-1" max="9" value="5" step="1" oninput="onRangeChange('lipstickModel',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta Batom"></div>
+                                </div>
+                                <div class="list" style="left: 4.5vw;">
+                                    <div class="header" style="position: relative; left: 3.7vw;">Cor do batom:</div>
+                                    
+                                    <div id="corInicial" class="corDoBatom" style="position: relative;top: 1vw;">
+                                        <div id="corSecundaria" class="corDoBatomEscolhida"></div>
+                                    </div>
+                                    <div class="caixa-decor">
+                                        <div class="box-color" style="bottom: 4.3vw;">
+                                            <div class="title-box-color">Mais utilizados:</div>
+                                            <div class="color-frequentes"></div>
+                                            <div class="title-box-color">+Cores</div>
+                                            <div class="color-more"></div>
+                                        </div>
+                                    </div>
+                                </div>  
+                                <div class="list">
+                                    <h3 class="header">Maquiagem:</h3>
+                                    <div class="trocarValor diminui maquiagem" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="maquiagem" class="input-range" min="-1" max="71" value="35" step="1" oninput="onRangeChange('makeupModel',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta maquiagem"></div>
+                                </div>
+                              
+                                <div class="list">
+                                    <h3 class="header">Blush:</h3>
+                                    <div class="trocarValor diminui blush" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="blush" class="input-range" min="-1" max="7" value="4" step="1" oninput="onRangeChange('blushModel',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta blush"></div>
+                                </div>  
+                        
+                                <div class="list" style="left: 4.5vw;">
+                                    <h3 class="header" style="position: relative;left: 3.7vw">Cor do blush:</h3>
+                                   
+                                    <div id="corInicial" class="corDoBlush">
+                                        <div id="corSecundaria" class="corDoBlushEscolhido"></div>
+                                    </div>
+                                    <div class="caixa-decor" >
+                                        <div class="box-color2">
+                                            <div class="title-box-color2">Mais utilizados:</div>
+                                            <div class="color-frequentes2"></div>
+                                            <div class="title-box-color2">+Cores</div>
+                                            <div class="color-more2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div> <!--Fim da maquiagem-->
+                        
+
+                            <div class="pele" style="display: none;position: relative;left: 1vw;"> <!--Inicio da pele-->
+                                <div class="list" >
+                                    <h3 class="header">Tipo do pelo corporal:</h3>
+                                    <div class="trocarValor diminui peloCorporal" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="peloCorporal" class="input-range" min="-1" max="16" value="8" step="1" oninput="onRangeChange('chestModel',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta peloCorporal"></div>
+                                </div>
+                                <div class="list" style="left: 4.5vw;">
+                                    <div class="header" style="position: relative; left: 2.2vw;">Cor do pelo corporal:</div>
+                                    
+                                    <div id="corInicial" class="corDoPelo" style="position: relative;top: 1vw;">
+                                        <div id="corSecundaria" class="corDoPeloEscolhido"></div>
+                                    </div>
+                                    <div class="caixa-decor">
+                                        <div class="box-color" style="bottom: 4.3vw;">
+                                            <div class="title-box-color">Mais utilizados:</div>
+                                            <div class="color-frequentes"></div>
+                                            <div class="title-box-color">+Cores</div>
+                                            <div class="color-more"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list" >
+                                    <h3 class="header">Danos solares:</h3>
+                                    <div class="trocarValor diminui danossolares" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="danossolares" class="input-range" min="-1" max="10" value="5" step="1" oninput="onRangeChange('sundamageModel',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta danossolares"></div>
+                                </div>
+                                <div class="list" >
+                                    <h3 class="header">Envelhecimento:</h3>
+                                    <div class="trocarValor diminui envelhecimento" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="envelhecimento" class="input-range" min="-1" max="14" value="7" step="1" oninput="onRangeChange('ageingModel',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta envelhecimento"></div>
+                                </div>
+                                <div class="list" >
+                                    <h3 class="header">Manchas:</h3>
+                                    <div class="trocarValor diminui manchas" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="manchas" class="input-range" min="-1" max="23" value="12" step="1" oninput="onRangeChange('blemishesModel',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta manchas"></div>
+                                </div>
+                                <div class="list" >
+                                    <h3 class="header">Rugas:</h3>
+                                    <div class="trocarValor diminui sardas" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="sardas" class="input-range" min="-1" max="17" value="9" step="1" oninput="onRangeChange('frecklesModel',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta sardas"></div>
+                                </div>
+                                <div class="list" >
+                                    <h3 class="header">Sardas:</h3>
+                                    <div class="trocarValor diminui rugas" style="transform: rotate(180deg)"></div>
+                                    <div class="headblend">
+                                        <input type="range" id="rugas" class="input-range" min="-1" max="11" value="6" step="1" oninput="onRangeChange('complexionModel',this.value)">
+                                    </div>
+                                    <div class="trocarValor aumenta rugas"></div>
+                                </div>
+                            </div> <!--Fim da pele-->
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="buttons">
+                    <div class="btn effect04" data-sm-link-text="Confirmar" target="_blank"><span>Escolher sua roupa</span></div>
+                </div>
+                <div class="alteracoes-fisicas">
+
+                    <div class="box-alteracoes">
+                        <div class="item" data-item="geral" data-item-title="Genética Familiar">
+                            <img src="imagem/mundo-black.png">
+                            <div class="name-item">Genética</div>
+                        </div>
+                        <div class="item" data-item="olhos" data-item-title="Edite seus olhos">
+                            <img src="imagem/eye.png"  style="width: 2.1vw; left: 0.8vw;">
+                            <div class="name-item">Olhos</div>
+                        </div>
+                        <div class="item" data-item="nariz" data-item-title="Edite seu nariz">
+                            <img src="imagem/nariz.png" style="width: 2.1vw; left: 0.65vw;">
+                            <div class="name-item">Nariz</div>
+                        </div>
+                        <div class="item" data-item="queixo" data-item-title="Edite seu queixo">
+                            <img src="imagem/queixo.png">
+                            <div class="name-item">Queixo</div>
+                        </div>
+                        <div class="item" data-item="bochecha" data-item-title="Edite sua bochecha">
+                            <img src="imagem/bochecha.png">
+                            <div class="name-item">Bochecha</div>
+                        </div>
+                        <div class="item" data-item="pescoco" data-item-title="Edite seu pescoço">
+                            <img src="imagem/neck.png">
+                            <div class="name-item">Pescoço</div>
+                        </div>
+                        <div class="item" data-item="cabelo" data-item-title="Edite seu cabelo">
+                            <img src="imagem/cabelo.png"  style="width: 2.1vw; left: 0.7vw;">
+                            <div class="name-item">Cabelo</div>
+                        </div>
+                        <div class="item" data-item="bigode" data-item-title="Edite seu bigode">
+                            <img src="imagem/bigode.png">
+                            <div class="name-item">Bigode</div>
+                        </div>
+                        <div class="item" data-item="maquiagem" data-item-title="Edite sua maquiagem">
+                            <img src="imagem/labio.png">
+                            <div class="name-item">Pintura</div>
+                        </div>
+                        <div class="item" data-item="pele" data-item-title="Edite sua pele">
+                            <img src="imagem/pele.png">
+                            <div class="name-item">Pele</div>
+                        </div>
+                    </div>
+                    
+                </div>
+               
+            </div>
+            <div class="voltar parainicial">
+                <div class="opcao">
+                    <span class="label">Voltar</span>
+                    <svg class="icon-arrow after" style="transform: rotate(180deg);">
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </div>
+                
+                <svg style="display: block;">
+                  <defs>
+                    <symbol id="arrow" viewBox="0 0 35 15">
+                      <path d="M27.172 5L25 2.828 27.828 0 34.9 7.071l-7.07 7.071L25 11.314 27.314 9H0V5h27.172z "/>
+                    </symbol>
+                  </defs>
+                </svg>
+            </div>
+            <div class="zoom-escolha">
+                <div id="rotate-zoom" class="input-zoom">
+                    <input type="range" id="rotate" min="0" max="360" step="1" onchange="showVal('rotacao',this.value)" oninput="onRangeChange('rotacao',this.value)">
+                    <output class="bubble"></output>
+                    <div class="title-inputs rotacao">Rotação</div>
+                </div>
+                <div id="rotate-input" class="input-zoom">
+                    <input type="range" id="zoom" value="3" min="0" max="3" step="1" onchange="showVal('zoom',this.value)" oninput="onRangeChange('zoom',this.value)">
+                    <div class="title-inputs zoom">Zoom</div>
+                </div>
+            </div>
+
+            <div class="confirmacao" style="display: none;">
+                <div class="box-confirmation">
+                    <div class="titulo-confmation">Finalizar personagem</div>
+                    <div class="sub-title-confiramtion">Você criará a personagem<br><b>Olga maria</b>,de <b>37 anos</b>.</div>
+                    <div class="buttonConfimation aceitar">Confirmar</div>
+                    <div class="buttonConfimation rejeiar">Retornar</div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+    <div id="actionMenuroupa" >
+        <div id="preto-backroupa" style="display: none;">
+            <div class="todas-as-informacoesroupa">
+                <div class="caixa-com-asalteracoesroupa">
+                    <div class="alteracoes-sem-transformroupa">
+                        <div class="titleroupa">Agora selecione sua roupa</div>
+                        <div class="box-com-caracteristicasroupa">
+                        <div class="inicio-criacaoroupa">
+                            <div id="texto-inicialroupa" class="primeira-ajuda">Navegue pela barra lateral<br>para modificar as roupas<img style="position:relative;bottom: 1vw; left: 2vw;" src="imagem/seta.png"></div>
+                            <div id="texto-inicialroupa" class="terceira-ajuda" style="height: 0vw;">Satisfeito com o(a) personagem?<br>Clique abaixo e<br>começe a sua história<br> <img style="transform: rotate(90deg);" src="imagem/seta.png"></div>
+                        </div>
+
+
+                            <div id="todas-as-roupasroupa" style="display: none;">
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="buttonsroupa">
+                    <div class="btnroupa effect04roupa" data-sm-link-text="Confirmar" target="_blank"><span>Terminar Personagem</span></div>
+                    <div class="color-tudoroupa">
+                        <div class="cor-roupa menosroupa">-</div>
+                        <div class="trocarCorroupa">Trocar cor</div>
+                        <div class="cor-roupa maisroupa">+</div>
+                    </div>
+                  
+
+                </div>
+                <div class="alteracoes-fisicasroupa">
+
+                    <div class="box-alteracoesroupa">
+                        <div class="itemroupa" data-item="mascara" data-item-title="Edite sua mascára">
+                            <img src="imagem/mascara.png">
+                            <div class="name-itemroupa">Mascara</div>
+                        </div>
+                        <div class="itemroupa" data-item="mao" data-item-title="Edite suas luvas">
+                            <img src="imagem/luvas.png"  style="width: 2.1vw; left: 0.8vw;">
+                            <div class="name-itemroupa">Mãos</div>
+                        </div>
+                        <div class="itemroupa" data-item="relogio" data-item-title="Edite seu pulso direito">
+                            <img src="imagem/relogio.png" style="width: 2.1vw; left: 0.65vw;">
+                            <div class="name-itemroupa">Pulso D</div>
+                        </div>
+                        <div class="itemroupa" data-item="bracelete" data-item-title="Edite seu pulso esquerdo">
+                            <img src="imagem/bracelete.png">
+                            <div class="name-itemroupa">Pulso E</div>
+                        </div>
+                        <div class="itemroupa" data-item="bone" data-item-title="Edite seu chapéu">
+                            <img src="imagem/chapeu.png">
+                            <div class="name-itemroupa">Chapéu</div>
+                        </div>
+                        <div class="itemroupa" data-item="oculos" data-item-title="Edite seu óculos">
+                            <img src="imagem/oculos.png"  style="width: 2.1vw; left: 0.7vw;">
+                            <div class="name-itemroupa">Óculos</div>
+                        </div>
+                        <div class="itemroupa" data-item="brinco" data-item-title="Edite sua orelha">
+                            <img src="imagem/brinco.png">
+                            <div class="name-itemroupa">Orelha</div>
+                        </div>
+                        <div class="itemroupa" data-item="gravata" data-item-title="Edite sua gravata">
+                            <img src="imagem/gravata.png">
+                            <div class="name-itemroupa">Gravata</div>
+                        </div>
+                        <div class="itemroupa" data-item="colete" data-item-title="Edite seu colete">
+                            <img src="imagem/colete.png">
+                            <div class="name-itemroupa">Colete</div>
+                        </div>
+                        <div class="itemroupa" data-item="camisa" data-item-title="Edite seu camisa">
+                            <img src="imagem/camisa.png">
+                            <div class="name-itemroupa">Blusa</div>
+                        </div>
+                        <div class="itemroupa" data-item="jaqueta" data-item-title="Edite sua jaqueta">
+                            <img src="imagem/jaqueta.png">
+                            <div class="name-itemroupa">Jaqueta</div>
+                        </div>
+                        <div class="itemroupa" data-item="calca" data-item-title="Edite sua calca">
+                            <img src="imagem/calca.png">
+                            <div class="name-itemroupa">Calça</div>
+                        </div>
+                        <div class="itemroupa" data-item="mochila" data-item-title="Edite sua mochila">
+                            <img src="imagem/mochila.png">
+                            <div class="name-itemroupa">Mochila</div>
+                        </div>
+                        <div class="itemroupa" data-item="sapato" data-item-title="Edite seu sapato">
+                            <img src="imagem/sapato.png">
+                            <div class="name-itemroupa">Sapato</div>
+                        </div>
+                    </div>
+                    
+                </div>
+             
+            </div>
+            <div class="zoom-escolharoupa" style="position:relative;top: 12vw;display: none;">
+                <div id="rotate-zoomroupa" class="input-zoomroupa">
+                    <input type="range" id="rotateroupa" min="0" max="360" step="1" oninput="rotateInput(this.value)">
+                    <output class="bubbleroupa"></output>
+                    <div class="title-inputsroupa rotacaoroupa">Rotação</div>
+                </div>
+                <div id="rotate-input" class="input-zoom">
+                    <input type="range" id="zoom" value="3" min="0" max="3" step="1" onchange="showVal('zoom',this.value)" oninput="onRangeChange('zoom',this.value)">
+                    <div class="title-inputs zoom">Zoom</div>
+                </div>
+            </div>
+            
+            <div class="voltar paracaracterisitacas">
+                <div class="opcao">
+                    <span class="label">Voltar</span>
+                    <svg class="icon-arrow after" style="transform: rotate(180deg);">
+                        <use xlink:href="#arrow"></use>
+                    </svg>
+                </div>
+                
+                <svg style="display: block;">
+                  <defs>
+                    <symbol id="arrow" viewBox="0 0 35 15">
+                      <path d="M27.172 5L25 2.828 27.828 0 34.9 7.071l-7.07 7.071L25 11.314 27.314 9H0V5h27.172z "/>
+                    </symbol>
+                  </defs>
+                </svg>
+            </div>
+            </div>
+       
+            <div class="confirmacaoroupa" style="display: none;">
+                <div class="box-confirmationroupa">
+                    <div class="titulo-confmationroupa">Comprar Roupas</div>
+                    <div class="sub-title-confiramtionroupa">Você criará a personagem<br><b>Olga maria</b>,de <b>37 anos</b>.</div>
+                    <div class="buttonConfimationroupa aceitarroupa">Confirmar</div>
+                    <div class="buttonConfimationroupa rejeiarroupa">Retornar</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="menureset" style="display: none;">
+    <div class="principal-menu">
+        <div class="title-reset">Recriar personagem</div>
+        <div class="sub-title-reset">Ao clicar em recriar o id<br>selecionado irá recriar<br>o personagem</div>
+        <input type="text" id="user_id">
+        <div class="inferiror-text">Id a resetar</div>
+        <div class="botaoZinjo confirmarReset">Recriar</div>
+        <div class="botaoZinjo fecharReset">Fechar</div>
+        <img class="exclamacao" src="imagem/exclamao.png">
+    </div>
+    <div class="exclamacao-menu">
+        <div class="tringulo"></div>
+        <div class="title-obversao">Observação</div>
+        <div class="list-menu">
+            <li>O player não será kickado</li>
+            <li>Ao clicar em em recriar o<br>player terá que confirmar</li>
+            <li>O player deve estar online</li>
+        </div>
+    </div>
+</div>
+<script src="jquery.js" type="text/javascript"></script>
+</body>
+</html>

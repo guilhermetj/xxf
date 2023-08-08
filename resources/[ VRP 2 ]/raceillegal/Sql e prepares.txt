@@ -1,0 +1,11 @@
+Banco de dados
+
+DROP TABLE IF EXISTS `races`;
+CREATE TABLE `races` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `vehicle` varchar(250) NOT NULL,
+  `raceid` int(11) NOT NULL DEFAULT 0,
+  `points` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

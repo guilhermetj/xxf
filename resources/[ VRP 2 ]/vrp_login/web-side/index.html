@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>#vrp</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<style>
+		#index {
+			margin: 30px;
+			display: none;
+			position: absolute;
+		}
+
+		.spawnNow {
+			float: left;
+			width: 300px;
+			padding: 20px;
+			color: #8ebda3;
+			font-size: 16px;
+			font-weight: 300;
+			transition: all 1s;
+			text-align: center;
+			list-style: none;
+			user-select: none;
+			border-radius: 3px;
+			background: #2e6e4c;
+			letter-spacing: 5px;
+			margin-bottom: 10px;
+			text-transform: uppercase;
+			text-shadow: 0 1px #1b402c;
+			box-shadow: 0 1px 0 #235239;
+			font-family: 'Roboto',sans-serif;
+		}
+
+		.spawnNow:hover {
+			background: #39875e;
+		}
+
+		.spawn {
+			color: #979696;
+			width: 310px;
+			padding: 15px;
+			list-style: none;
+			user-select: none;
+			font-size: 13px;
+			text-align: center;
+			transition: all 1s;
+			border-radius: 3px;
+			margin-bottom: 10px;
+			text-transform: uppercase;
+			transition: width 0.5s;
+			background: rgba(54, 26, 100, 0.76);
+			letter-spacing: 3px;
+			text-shadow: 0 1px #232630;
+			font-family: 'Roboto',sans-serif;
+		}
+
+		.spawn:hover {
+			background: #343a46;
+		}
+	</style>
+</head>
+<body>
+	<div id="index">
+		<ul>
+			<li class="spawn" data-spawn="davis">Mega Mall</li>
+			<li class="spawn" data-spawn="hawick">Villa do Chaves</li>
+			<li class="spawn" data-spawn="west">Praça Lago</li>
+			<li class="spawn" data-spawn="little">Central dos Motoristas</li>
+			<li class="spawn" data-spawn="avenue">Parte de Tras da Praça</li>
+			<li class="spawn" data-spawn="goma">Academia Praia</li>
+			<li class="spawn" data-spawn="delperro">Estacionamento Praia</li>
+			<li class="spawn" data-spawn="route68">Route 68</li>
+			<li class="spawn" data-spawn="procopio">Estação Central</li>
+			<li class="spawnNow" data-spawn="spawn">CONFIRMAR</li>
+		</ul>
+	</div>
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+	<script>
+		$(() => {
+			window.addEventListener('message',(event) => {
+				if (event.data.display) {
+					$('#index').show();
+				} else {
+					$('#index').hide();
+				}
+			})
+
+			$('li').click(function(){
+				$.post('http://vrp_login/spawn',JSON.stringify({ choice: $(this).data('spawn') }));
+			});
+		})
+	</script>
+</body>
+</html>

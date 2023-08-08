@@ -1,0 +1,282 @@
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: rgba(26, 27, 30, 0.8); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: rgb(63, 69, 92); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgb(63, 69, 92); }
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { appearance: none; }
+
+body { 
+    margin: 0px; 
+    padding: 0px;
+    color: rgb(255, 255, 255); 
+    font-family: Roboto, Arial, Helvetica, sans-serif; 
+}
+
+* { overflow: hidden; user-select: none; 
+    box-sizing: border-box; 
+}
+    
+.inventory { 
+    width: 100vw; 
+    height: 100vh;
+    display: none; 
+    position: fixed; 
+    align-items: center; 
+    flex-direction: column; 
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.innerInventory{ 
+    display: flex; 
+    flex-direction: column;
+}
+
+.sections { 
+    height: 589px; 
+    display: flex; 
+}
+
+
+#invleft, #invright { 
+    gap: 3px; 
+    display: grid; 
+    overflow-y: scroll; 
+    padding-right: 3px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+}
+
+.itemAmount { 
+    margin: 15px 15px 0px 0px; 
+}
+
+.myInfos {
+	align-self: flex-start;
+	padding: 0 0 8px 16px;
+}
+
+.infosContent {
+	padding-top: 14px;
+	font-size: .70rem;
+	color: rgb(255, 255, 255);
+}
+
+.infosContent span {
+	letter-spacing: 1px;
+	margin-right: 8px;
+}
+
+.myInfos b {
+	font-size: 1.5rem;
+	padding-bottom: 15px;
+}
+
+.myInfos i {
+	color: rgb(255, 255, 255);
+	font-weight: 300;
+}
+
+.myInfos s {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.top { 
+    display: flex; 
+    color: rgb(255, 255, 255); 
+    font-size: 0.7rem; 
+    justify-content: space-between; 
+}
+.populated { 
+    background-image: initial;
+    background-position: initial; 
+    background-repeat: initial;
+    background-attachment: initial; 
+    background-origin: initial; 
+    background-clip: initial;                                               
+    background-color: rgba(25, 28, 35, 0.75); 
+    background-size: 90% !important; 
+}
+
+.populated:hover, .hoverControl { 
+    background: rgb(48, 53, 74);
+}
+
+.item, .item2 {
+    width: 105px;
+    height: 145px;
+    display: flex;
+    border-radius: 4px;
+    flex-direction: column;
+    text-shadow: 1px 1px #000;
+    background: rgba(68, 54, 94, 0.596);
+}
+
+.itemPrice { 
+    color: rgb(160, 206, 182); 
+    border-radius: 3px; 
+    background: rgb(46, 110, 76); 
+    padding: 3px 6px 4px; 
+    margin: 14px 14px 0px 0px; 
+    box-shadow: rgb(44, 48, 60) 0px 1px 0px; 
+    text-shadow: rgb(34, 81, 56) 1px 1px; 
+}
+
+.itemWeight { 
+    margin: 15px 0px 0px 15px; 
+}
+
+.itemPrice::first-letter { 
+    font-size: 10px; 
+    padding-right: 2px; 
+    vertical-align: 0px; 
+}
+
+.item .nameItem { 
+    margin-top: auto; 
+    align-self: center; 
+    width: 100%; 
+    color: rgb(255, 255, 255); 
+    padding: 8px 10px; 
+    font-size: 0.68rem; 
+    text-align: center; 
+    white-space: nowrap; 
+    letter-spacing: 1px; 
+    text-overflow: ellipsis; 
+    text-transform: uppercase; 
+    background: rgba(54, 26, 100, 0.76);
+}
+
+.invMiddle { 
+    display: flex; 
+    align-items: center; 
+    flex-direction: column; 
+}
+
+input { 
+    text-align: center; 
+}
+
+input::placeholder { 
+    color: rgb(255, 255, 255); 
+}
+
+.invMiddle div, .middleButton, .invMiddle input { 
+    border: 0px; 
+    width: 70%; 
+    outline: none; 
+    color: rgb(255, 255, 255); 
+    padding: 16px 0px; 
+    font-size: 12px; 
+    text-align: center;
+    border-radius: 4px; 
+    margin-bottom: 12px; 
+    letter-spacing: 1px;
+    background: rgba(68, 54, 94, 0.596);
+}
+
+#weight { 
+	max-width: 1230px; 
+}
+#weightTextLeft { 
+	color: rgba(68, 54, 94, 0.596);
+	font-size: 12px; min-width: 540px; 
+	max-width: 540px; text-align: right; 
+	margin-right: 10px; 
+	border-radius: 4px; 
+	margin-bottom: 15px; 
+	letter-spacing: 1px; 
+}
+#weightBarLeft { 
+	float: left; 
+	min-height: 8px;
+	max-height: 8px;
+	min-width: 536px;
+	max-width: 536px;
+	margin-bottom: 5px; 
+	border-radius: 4px; 
+	background:rgba(54, 26, 100, 0.76);
+}
+#weightTextRight { 
+	float: right; 
+	color: rgb(156, 156, 156); 
+	font-size: 12px; 
+	min-width: 530px; 
+	max-width: 530px; 
+	text-align: left; 
+	margin-left: 15px; 
+	border-radius: 4px; 
+	margin-bottom: 15px; 
+	letter-spacing: 1px; 
+}
+#weightBarRight { 
+	float: right;
+	min-height: 8px;
+	max-height: 8px; 
+	min-width: 536px;
+	max-width: 536px;
+	border-radius: 4px; 
+	margin-bottom: 5px; 
+	background: rgba(54, 26, 100, 0.76);
+}
+#weightContent { 
+	float: left; 
+	min-height: 8px;
+	max-height: 8px; 
+	max-width: 536px;
+	border-radius: 4px; 
+	background: rgba(54, 26, 100, 0.76);
+	transition: all 0.9s ease 0s; 
+}
+
+.ui-helper-hidden-accessible { 
+    display: none; 
+}
+
+.ui-tooltip { 
+    z-index: 9999; 
+    color: rgb(255, 255, 255); 
+    font-size: 11px; 
+    border-radius: 4px; 
+    position: absolute;
+    background: rgba(54, 26, 100, 0.76); 
+    letter-spacing: 1px; padding: 20px 20px 15px; 
+    }
+
+.ui-tooltip:hover { 
+    display: none; 
+}
+
+.ui-tooltip item { 
+    float: left; 
+    font-size: 14px;
+    min-width: 200px; 
+    letter-spacing: 2px; 
+}
+
+.ui-tooltip legenda { 
+    float: left; 
+    min-width: 200px; 
+    margin-top: 10px; 
+    padding-top: 6px; 
+    line-height: 20px; 
+    letter-spacing: 2px; 
+    border-top: 1px solid rgb(64, 71, 92); 
+}
+
+.ui-tooltip description { 
+    float: left; 
+    color: rgb(98, 105, 119); 
+    font-size: 10px; 
+    max-width: 200px; 
+    margin-top: 10px; 
+
+}
+.ui-tooltip s {
+    color: rgb(73, 79, 90); 
+    padding: 0px 5px; 
+    text-decoration: none; 
+}
+
+.ui-tooltip r { 
+    color: rgb(98, 105, 119); 
+}

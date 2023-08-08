@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ui.css">
+</head>
+<body>
+    <div id="container" style="display: none">
+        <div id="topo">
+            <img src="https://seeklogo.com/images/T/TATTOO-logo-B3289C6537-seeklogo.com.png" alt="">
+        </div>
+        <div id="menu">
+                <div class="menuType" style="background-image: url(https://cdn.discordapp.com/attachments/746851286422519928/758813547835686992/head.png);" onclick="selectPart(this)" data-idpart="head"><div class="tooltip">Rosto</div></div>
+                <div class="menuType" style="background-image: url(https://cdn.discordapp.com/attachments/746851286422519928/758813556019298325/torso.png);" onclick="selectPart(this)" data-idpart="torso"><div class="tooltip">Torso</div></div>
+                <div class="menuType" style="background-image: url(https://cdn.discordapp.com/attachments/746851286422519928/758813549182844958/leftarm.png);" onclick="selectPart(this)" data-idpart="leftarm"><div class="tooltip">Braço Esquerdo</div></div>
+                <div class="menuType" style="background-image: url(https://cdn.discordapp.com/attachments/746851286422519928/758813552223584266/rightarm.png);" onclick="selectPart(this)" data-idpart="rightarm"><div class="tooltip">Braço Direito</div></div>
+                <div class="menuType" style="background-image: url(https://cdn.discordapp.com/attachments/746851286422519928/758813550809841664/leftleg.png);" onclick="selectPart(this)" data-idpart="leftleg"><div class="tooltip">Perna Esquerda</div></div>
+                <div class="menuType" style="background-image: url(https://cdn.discordapp.com/attachments/746851286422519928/758813553808900146/rightleg.png);" onclick="selectPart(this)" data-idpart="rightleg"><div class="tooltip">Perna Direita</div></div>
+                <div class="menuType" style="background-image: url(https://cdn.discordapp.com/attachments/746851286422519928/813114696990720027/cabelo.png);" onclick="selectPart(this)" data-idpart="overlay"><div class="tooltip">Overlay</div></div>
+                <div class="menuType" style="background-image: url(https://cdn.discordapp.com/attachments/746851286422519928/759626147113467934/reset.png);" onclick="selectPart(this)" data-idpart="reset"><div class="tooltip">Reset</div></div>       
+        </div>
+        <div id="listagem">
+        </div>
+        <div id="menuEssencial">
+            <div id="color">
+                <img id="erguermaos" src="https://cdn.discordapp.com/attachments/712813090952970346/802647468961300496/protest.png" alt="">
+                <div id="esquerda"><</div>
+                <div id="direita">></div>
+            </div>
+            <div id="total">
+                <div id="totalEsquerda">TOTAL:</div>
+                <div id="totalDireita">0</div>
+            </div>
+            <div id="cart">
+
+            </div>
+        </div>
+    </div>
+    
+        <div id="cores">
+            <h1>CORES</h1>
+            <div id="listaCores">
+                <div id="primaria">
+                    <h1>1°</h1>                           
+                </div>
+                <div id="secundaria">
+                    <h1>2°</h1>                
+                </div>
+
+            </div>
+        </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src="ui.js"></script>
+</body>
+</html>
